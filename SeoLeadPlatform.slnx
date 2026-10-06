@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SeoLeadPlatform.Api/SeoLeadPlatform.Api.csproj" />
+    <Project Path="src/SeoLeadPlatform.Application/SeoLeadPlatform.Application.csproj" />
+    <Project Path="src/SeoLeadPlatform.Domain/SeoLeadPlatform.Domain.csproj" />
+    <Project Path="src/SeoLeadPlatform.Infrastructure/SeoLeadPlatform.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SeoLeadPlatform.IntegrationTests/SeoLeadPlatform.IntegrationTests.csproj" />
+    <Project Path="tests/SeoLeadPlatform.UnitTests/SeoLeadPlatform.UnitTests.csproj" />
+  </Folder>
+</Solution>

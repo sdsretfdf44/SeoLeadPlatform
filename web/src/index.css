@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --shadow-glow-brand: 0 8px 24px -8px rgb(37 99 235 / 0.35);
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+@layer base {
+  h1, h2, h3, h4 {
+    @apply tracking-tight text-slate-900;
+  }
+  code, pre, kbd {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl border border-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_1px_3px_rgba(15,23,42,0.06)];
+  }
+  .card-body {
+    @apply p-6;
+  }
+  .card-header {
+    @apply px-6 pt-5 pb-4 border-b border-slate-100 flex items-center justify-between gap-4;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-[.98];
+  }
+  .btn-primary {
+    @apply bg-brand-600 text-white hover:bg-brand-700 shadow-sm hover:shadow-md hover:shadow-brand-600/25;
+  }
+  .btn-secondary {
+    @apply bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 hover:border-slate-300;
+  }
+  .btn-ghost {
+    @apply text-slate-600 hover:text-slate-900 hover:bg-slate-100;
+  }
+  .btn-danger {
+    @apply bg-rose-50 text-rose-700 hover:bg-rose-100 border border-rose-100;
+  }
+  .btn-sm {
+    @apply text-xs px-2.5 py-1.5;
+  }
+  .input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20 transition-shadow;
+  }
+  .label {
+    @apply block text-sm font-medium text-slate-700 mb-1.5;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium;
+  }
+  .badge-dot {
+    @apply h-1.5 w-1.5 rounded-full;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-md border border-slate-200 bg-white px-2 py-0.5 text-xs font-medium text-slate-600 shadow-sm;
+  }
+  .metric-value {
+    @apply text-3xl font-semibold text-slate-900 tracking-tight;
+    font-feature-settings: 'tnum';
+  }
+  .metric-label {
+    @apply text-[11px] uppercase tracking-wider text-slate-500 font-semibold;
+  }
+  .section-title {
+    @apply text-sm font-semibold text-slate-900 tracking-tight;
+  }
+  .kbd {
+    @apply inline-flex items-center rounded border border-slate-200 bg-slate-50 px-1.5 py-0.5 text-[10px] font-medium text-slate-600;
+  }
+  .avatar {
+    @apply inline-flex items-center justify-center h-9 w-9 rounded-lg text-sm font-semibold text-white shrink-0;
+  }
+  .progress {
+    @apply relative h-1.5 w-full overflow-hidden rounded-full bg-slate-100;
+  }
+  .progress-bar {
+    @apply absolute inset-y-0 left-0 rounded-full transition-[width] duration-500;
+  }
+  .table-row-hover {
+    @apply transition-colors hover:bg-slate-50/60;
+  }
+  .divider {
+    @apply h-px bg-slate-100;
+  }
+}
+
+@layer utilities {
+  .animate-pulse-dot {
+    animation: pulseDot 1.5s ease-in-out infinite;
+  }
+  @keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+  .bg-grid-fade {
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 60%, #fff 100%), radial-gradient(circle at 1px 1px, rgb(148 163 184 / 0.35) 1px, transparent 0);
+    background-size: auto, 20px 20px;
+  }
+  .text-gradient-brand {
+    background: linear-gradient(90deg, #1d4ed8 0%, #6366f1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
